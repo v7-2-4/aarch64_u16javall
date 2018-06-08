@@ -1,0 +1,32 @@
+language: java
+
+# Version number
+jdk:
+  - openjdk7
+  - openjdk8
+  - oraclejdk8
+
+runtime:
+  nodePool: custom__aarch64__Ubuntu_16_04
+
+build:
+  pre_ci_boot:
+    image_name: drydock/aarch64_u16javall
+    image_tag: master
+    pull: true
+    
+  ci:
+    - java -version
+    - docker ps
+    - docker images
+    - mvn --version    
+    - ant -version 
+    - gradle --version
+    - docker pull shippabledocker/sample_node_pvt:ecr
+    
+integrations:
+    
+  hub:
+ #Docker integration
+    - integrationName: ship-docker
+      type: dockerRegistryLogin 
