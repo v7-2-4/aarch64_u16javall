@@ -14,7 +14,7 @@ runtime:
 matrix:
 #include this version with the env 
   include:               
-    - python: oraclejdk8 #this cant trigger 3 builds for multiple node pool. Include section purpose is trigger something in single build not as matrix. if we apply multiple node pool here it might end up in triggering in matrix so doesnt apply.
+    - jdk: oraclejdk8 #this cant trigger 3 builds for multiple node pool. Include section purpose is trigger something in single build not as matrix. if we apply multiple node pool here it might end up in triggering in matrix so doesnt apply.
       env: 
         - M1=ONE #just to pass build Since this is in include section it wont take matrix environment variable and value so adding same env n value here. since in all section we are verifing env n value
         - env1=OneValueFromInclude
