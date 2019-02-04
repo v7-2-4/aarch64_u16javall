@@ -21,6 +21,7 @@ build:
     - java -version
     - docker ps
     - docker images
+    - if [ "$SHIPPABLE_JDK_VERSION" == "openjdk7" ] || [ "$SHIPPABLE_JDK_VERSION" == "oraclejdk7" ]; then sdk use ant 1.9.9; sdk use gradle 4.10.3; fi
     - mvn --version   #3.6.0 
     - ant -version #1.9.13
     - gradle --version #5.1
