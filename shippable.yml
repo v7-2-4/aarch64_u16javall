@@ -25,7 +25,7 @@ build:
     - mvn --version   #3.6.0 
     - ant -version #1.9.13
     - gradle --version #5.1
-    - docker pull shippabledocker/sample_node_pvt:ecr
+    #- docker pull shippabledocker/sample_node_pvt:ecr
     
 integrations:
     
